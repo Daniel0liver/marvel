@@ -1,13 +1,7 @@
-import React from 'react';
+import Routes from 'routes';
 
 const App = () => {
-  return (
-    <div>
-      <main>
-        <code>Time to work!</code>
-      </main>
-    </div>
-  );
+  return <Routes />;
 };
 
 export default App;
