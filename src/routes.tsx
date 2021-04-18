@@ -1,16 +1,23 @@
+import React from 'react';
 import { lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
+import Sidebar from 'components/Sidebar';
+import Header from 'components/Header';
 
 const Characters = lazy(() => import('pages/Characters'));
 
 const Routes = () => {
   return (
     <Router>
-      <Suspense fallback={<div>loading...</div>}>
-        <Switch>
-          <Route exact path="/" component={Characters} />
-        </Switch>
-      </Suspense>
+      <Sidebar>
+        <Header />
+        <Suspense fallback={<div>loading...</div>}>
+          <Switch>
+            <Route exact path="/" component={Characters} />
+          </Switch>
+        </Suspense>
+      </Sidebar>
     </Router>
   );
 };
