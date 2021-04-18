@@ -1,3 +1,4 @@
+import { IoIosArrowForward, IoIosArrowBack } from 'react-icons/io';
 import MarvelIcon from 'assets/images/marvel.svg';
 
 import { useSidebarContext } from 'contexts/Sidebar';
@@ -8,6 +9,7 @@ import {
   CenterContent,
   RightContent,
   Image,
+  Button,
 } from './styles';
 
 const CustomHeader = () => {
@@ -20,7 +22,9 @@ const CustomHeader = () => {
   return (
     <Header>
       <LeftContent>
-        <button onClick={handleClickSidebar}>Show sidebar</button>
+        <Button onClick={handleClickSidebar}>
+          {isOpenSidebar ? <IoIosArrowBack /> : <IoIosArrowForward />}
+        </Button>
       </LeftContent>
       <CenterContent>
         <Image src={MarvelIcon} alt="Marvel logo" />

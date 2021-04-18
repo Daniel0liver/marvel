@@ -10,13 +10,15 @@ export const Header = styled.header`
 
 export const LeftContent = styled.div`
   flex: 1;
+  display: flex;
+  align-items: center;
 `;
 
 export const CenterContent = styled.div`
   flex: 1;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 `;
 
 export const RightContent = styled.div`
@@ -26,4 +28,26 @@ export const RightContent = styled.div`
 export const Image = styled.img`
   width: 130px;
   height: auto;
+`;
+
+export const Button = styled.button`
+  width: 37px;
+  height: 37px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  border: solid 1px #f0131d;
+  font-size: 22px;
+  background: transparent;
+  color: #fff;
+  transition: 0.3s;
+
+  &:hover,
+  :focus,
+  :active {
+    background: #f0131d;
+  }
 `;
