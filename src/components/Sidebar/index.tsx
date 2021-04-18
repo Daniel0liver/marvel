@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ReactSidebar from 'react-sidebar';
+
+import { useSidebarContext } from 'contexts/Sidebar';
 
 import SidebarContent from './SidebarContent';
 
@@ -8,18 +10,13 @@ interface ISidebarProps {
 }
 
 const Sidebar = ({ children }: ISidebarProps) => {
-  const [opened, setOpened] = useState(true);
-
-  const handleOpen = (value: boolean) => {
-    setOpened(value);
-  };
+  const { isOpenSidebar } = useSidebarContext();
 
   return (
     <ReactSidebar
       sidebar={<SidebarContent />}
-      open={opened}
-      docked={true}
-      onSetOpen={handleOpen}
+      open={isOpenSidebar}
+      docked={isOpenSidebar}
       styles={{
         sidebar: { backgroundColor: '#e62429', minWidth: '260px' },
         content: { backgroundColor: '#0e0e10' },
