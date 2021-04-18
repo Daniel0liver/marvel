@@ -21,8 +21,8 @@ const Sidebar = ({ children }: ISidebarProps) => {
       docked={true}
       onSetOpen={handleOpen}
       styles={{
-        sidebar: { backgroundColor: 'rgb(230 36 41)', minWidth: '260px' },
-        content: { backgroundColor: '#202020' },
+        sidebar: { backgroundColor: '#e62429', minWidth: '260px' },
+        content: { backgroundColor: '#0e0e10' },
       }}
     >
       {children}
