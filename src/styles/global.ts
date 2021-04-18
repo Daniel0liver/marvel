@@ -8,11 +8,15 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background-color: #f5f5f5;
+    background-color: rgb(14 14 16);
   }
 
   html, body, #root {
     min-height: 100%;
+  }
+
+  button:focus, :active {
+    outline:none
   }
 
   a {
