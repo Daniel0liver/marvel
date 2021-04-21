@@ -1,1 +1,1 @@
-export * as useFetchApi from './fetchApi';
+export { default as useFetchApi } from './fetchApi';
