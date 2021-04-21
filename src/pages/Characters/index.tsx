@@ -1,15 +1,20 @@
 import { useFetchApi } from 'hooks';
 import CharacterCard from 'components/CharacterCard';
+import Loading from 'components/Loading';
 import { StyledContainer } from './styles';
 
 const Characters = () => {
-  const { data } = useFetchApi('characters');
+  const { data, isFetching } = useFetchApi('characters');
 
   return (
     <StyledContainer>
-      {data?.results.map((item) => (
-        <CharacterCard key={String(item.id)} data={item} />
-      ))}
+      {!isFetching ? (
+        data?.results.map((item) => (
+          <CharacterCard key={String(item.id)} data={item} />
+        ))
+      ) : (
+        <Loading />
+      )}
     </StyledContainer>
   );
 };
