@@ -1,10 +1,16 @@
-import React from 'react';
+import { useFetchApi } from 'hooks';
+import CharacterCard from 'components/CharacterCard';
+import { StyledContainer } from './styles';
 
 const Characters = () => {
+  const { data } = useFetchApi('characters');
+
   return (
-    <div>
-      <h1>Marvel Characters</h1>
-    </div>
+    <StyledContainer>
+      {data?.results.map((item) => (
+        <CharacterCard key={String(item.id)} data={item} />
+      ))}
+    </StyledContainer>
   );
 };
 
