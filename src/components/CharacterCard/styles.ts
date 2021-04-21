@@ -14,12 +14,16 @@ export const StyledCard = styled.div`
       transform: scale(1.1);
       cursor: pointer;
     }
+
+    span {
+      background-size: 100% 100%;
+    }
   }
 `;
 
 export const StyledHeader = styled.figure``;
 
-export const StyledFooter = styled.div`
+export const StyledFooter = styled.span`
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -31,8 +35,12 @@ export const StyledFooter = styled.div`
   bottom: 0;
   padding-left: 1rem;
   border-left: solid 5px #e62429;
+  transition: background-size 0.3s 0s;
 
+  background: linear-gradient(to right, #e62429, #e62429);
   background-color: rgba(14, 14, 16, 0.8);
+  background-repeat: no-repeat;
+  background-size: 0 100%;
   color: #fff;
 `;
 
